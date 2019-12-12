@@ -11,15 +11,14 @@ if (!defined('TYPO3_MODE')) {
     die('Access denied.');
 }
 
-// ...
+// Instantiate SignalSlotDispatcher
 $signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
     TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class
 );
 
-// ...
+// Connect Signal to Slot
 $signalSlotDispatcher->connect(
-    // \Clickstorm\CsSeo\Hook\CanonicalAndHreflangHook::class,
-    \TYPO3\CMS\Seo\CanonicalGenerator::class,
+    \TYPO3\CMS\Seo\Canonical\CanonicalGenerator::class,
     'beforeGeneratingCanonical',
     \SchamsNet\SignalSlotDemo\Slot\DemoSlot::class,
     'logCanonical',

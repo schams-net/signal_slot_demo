@@ -1,0 +1,17 @@
+{
+  "name": "schams-net/signal-slot-demo",
+  "type": "typo3-cms-extension",
+  "description": "Signal/Slot Demo",
+  "require": {
+	"typo3/cms-core": "^9.5",
+	"typo3/cms-seo": "^9.5"
+  },
+  "replace": {
+	"signal_slot_demo": "self.version"
+  },
+  "autoload": {
+	"psr-4": {
+	  "SchamsNet\\SignalSlotDemo\\": "Classes/"
+	}
+  }
+}
